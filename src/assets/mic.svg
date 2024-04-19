@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 15.91 118.5">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#_ÂÁ_Ï_ÌÌ_È_ËÂÌÚ_137);
+        mix-blend-mode: multiply;
+        opacity: .5;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: url(#_ÂÁ_Ï_ÌÌ_È_ËÂÌÚ_317);
+      }
+
+      .cls-3 {
+        fill: url(#_ÂÁ_Ï_ÌÌ_È_ËÂÌÚ_314);
+      }
+
+      .cls-4 {
+        fill: url(#_ÂÁ_Ï_ÌÌ_È_ËÂÌÚ_308);
+      }
+
+      .cls-5 {
+        fill: url(#_ÂÁ_Ï_ÌÌ_È_ËÂÌÚ_99-3);
+      }
+
+      .cls-6 {
+        fill: url(#_ÂÁ_Ï_ÌÌ_È_ËÂÌÚ_99-2);
+      }
+
+      .cls-7 {
+        fill: url(#_ÂÁ_Ï_ÌÌ_È_ËÂÌÚ_314-2);
+      }
+
+      .cls-9 {
+        isolation: isolate;
+      }
+
+      .cls-8 {
+        fill: url(#_ÂÁ_Ï_ÌÌ_È_ËÂÌÚ_99);
+      }
+    </style>
+    <radialGradient id="_ÂÁ_Ï_ÌÌ_È_ËÂÌÚ_99" data-name="¡ÂÁ˚ÏˇÌÌ˚È „‡‰ËÂÌÚ 99" cx="8.31" cy="9.06" fx="8.31" fy="9.06" r="5.14" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3c277e"/>
+      <stop offset="1" stop-color="#1c1e3e"/>
+    </radialGradient>
+    <linearGradient id="_ÂÁ_Ï_ÌÌ_È_ËÂÌÚ_137" data-name="¡ÂÁ˚ÏˇÌÌ˚È „‡‰ËÂÌÚ 137" x1="720.29" y1="112.25" x2="720.29" y2="118.5" gradientTransform="translate(728.18) rotate(-180) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#212045"/>
+      <stop offset=".12" stop-color="#3e3d5e"/>
+      <stop offset=".44" stop-color="#908fa2"/>
+      <stop offset=".7" stop-color="#cccbd4"/>
+      <stop offset=".9" stop-color="#f0f0f3"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <radialGradient id="_ÂÁ_Ï_ÌÌ_È_ËÂÌÚ_99-2" data-name="¡ÂÁ˚ÏˇÌÌ˚È „‡‰ËÂÌÚ 99" cx="7.9" cy="112.9" fx="7.9" fy="112.9" r="5.61" xlink:href="#_ÂÁ_Ï_ÌÌ_È_ËÂÌÚ_99"/>
+    <radialGradient id="_ÂÁ_Ï_ÌÌ_È_ËÂÌÚ_99-3" data-name="¡ÂÁ˚ÏˇÌÌ˚È „‡‰ËÂÌÚ 99" cx="7.88" cy="113.74" fx="7.88" fy="113.74" r="5.62" gradientTransform="translate(.44) scale(.95 1)" xlink:href="#_ÂÁ_Ï_ÌÌ_È_ËÂÌÚ_99"/>
+    <linearGradient id="_ÂÁ_Ï_ÌÌ_È_ËÂÌÚ_308" data-name="¡ÂÁ˚ÏˇÌÌ˚È „‡‰ËÂÌÚ 308" x1="7.9" y1="112.96" x2="7.9" y2="111.15" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3c3c90"/>
+      <stop offset="1" stop-color="#6f71b4"/>
+    </linearGradient>
+    <linearGradient id="_ÂÁ_Ï_ÌÌ_È_ËÂÌÚ_314" data-name="¡ÂÁ˚ÏˇÌÌ˚È „‡‰ËÂÌÚ 314" x1="10.31" y1="112.47" x2="10.31" y2="20.16" gradientTransform="translate(-13.58) scale(2.08 1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1c1e3e"/>
+      <stop offset="1" stop-color="#48388e"/>
+    </linearGradient>
+    <linearGradient id="_ÂÁ_Ï_ÌÌ_È_ËÂÌÚ_317" data-name="¡ÂÁ˚ÏˇÌÌ˚È „‡‰ËÂÌÚ 317" x1="8.49" y1="22.72" x2="8.49" y2="8.31" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#482c87"/>
+      <stop offset="1" stop-color="#48388e"/>
+    </linearGradient>
+    <linearGradient id="_ÂÁ_Ï_ÌÌ_È_ËÂÌÚ_314-2" data-name="¡ÂÁ˚ÏˇÌÌ˚È „‡‰ËÂÌÚ 314" x1="8.35" y1="30.49" x2="8.35" y2="19.26" gradientTransform="translate(-3.56 -29.54) scale(1.42 1.53)" xlink:href="#_ÂÁ_Ï_ÌÌ_È_ËÂÌÚ_314"/>
+  </defs>
+  <g class="cls-9">
+    <g id="Calque_2" data-name="Calque 2">
+      <g id="Calque_1-2" data-name="Calque 1">
+        <polygon class="cls-8" points="1.08 8.31 15.54 8.31 15.54 9.81 1.26 9.81 1.08 8.31"/>
+        <polygon class="cls-1" points=".43 112.25 .43 118.5 15.36 118.5 15.36 112.74 .43 112.25"/>
+        <g>
+          <polygon class="cls-6" points="0 112.06 .41 113.74 15.36 113.74 15.79 112.06 0 112.06"/>
+          <path class="cls-5" d="M15.36,113.74c0,.5-3.34.9-7.46.9s-7.46-.4-7.46-.9,3.34-.9,7.46-.9,7.46.4,7.46.9Z"/>
+          <path class="cls-4" d="M15.79,112.06c0,.5-3.53.9-7.9.9s-7.9-.4-7.9-.9,3.53-.9,7.9-.9,7.9.4,7.9.9Z"/>
+        </g>
+        <path class="cls-3" d="M6.59,112.03l.99-91.62,1.31-.24.32,91.86s-1.13,1-2.61,0Z"/>
+        <path class="cls-2" d="M8.44,22.72s-3.36-1.04-7.37-4.78v-9.63h1.45l.47,8.27s4.35,2.69,11.11.5l.16-8.78h1.27l.37,9.46s-1.88,2.92-7.46,4.95Z"/>
+        <rect class="cls-7" x="3.32" width="9.98" height="17.22" rx="4.57" ry="4.57"/>
+      </g>
+    </g>
+  </g>
+</svg>
