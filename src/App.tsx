@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-import * as classNames from "classnames";
+import classNames from "classnames";
 import {useAudio} from "react-use";
 import Lottie from 'react-lottie';
 import './App.css'
@@ -7,6 +7,7 @@ import background from './assets/background.png';
 import light from './assets/light.svg';
 import music from './assets/maquette_zz.mp3';
 import sum from './assets/Sum.png';
+import peoples from './assets/peoples.svg';
 import confetti from './confettis.json';
 import confetti2 from './confetti2.json';
 import hb from './hb.json';
@@ -27,7 +28,7 @@ function App() {
             setTimeout(() => {
                 controls.play();
                 setDelayedStarted(true);
-            }, 2000);
+            }, 4000);
         }
     }, [started]);
 
@@ -35,7 +36,7 @@ function App() {
         if (delayedStarted && !state.playing) {
             setEnded(true);
             setTimeout(() => {
-               setDelayedEnded(true);
+                setDelayedEnded(true);
             }, 4000);
         }
     }, [state]);
@@ -82,7 +83,8 @@ function App() {
                             zIndex: 10
                         }}
                     />
-                    <div style={{left: "35.8vw"}} className="ray"></div>
+                    <div style={{left: "35.8vw", transition: "2s", opacity: delayedStarted ? 1 : 0}}
+                         className="ray"></div>
                 </div>
 
                 <div className="light2">
@@ -97,7 +99,22 @@ function App() {
                             zIndex: 10
                         }}
                     />
-                    <div style={{left: "65.8vw"}} className="ray"></div>
+                    <div style={{left: "65.8vw", transition: "2s", opacity: delayedStarted ? 1 : 0}}
+                         className="ray"></div>
+                </div>
+
+                <div className="light3">
+                    <div
+                        style={{width: '100vh', height: '500px', zIndex: 11, left: "30vw", transition: "3s", opacity: delayedStarted ? 1 : 0}}
+                        className={classNames("ray2", {"ray2-anim": delayedStarted})}
+                    />
+                </div>
+
+                <div className="light4">
+                    <div
+                        style={{width: '100vh', height: '500px', zIndex: 11, left: "75vw", transition: "3s", opacity: delayedStarted ? 1 : 0}}
+                        className={classNames("ray2", {"ray2-anim": delayedStarted})}
+                    />
                 </div>
 
                 <div
@@ -107,31 +124,43 @@ function App() {
                         left: '0',
                         width: '100%',
                         height: '100%',
+                        overflow: 'hidden'
                     }}
                 >
                     <img
-                        className={classNames({sum: state.playing})}
+                        className={classNames({sum: delayedStarted})}
                         style={{
                             position: 'absolute',
                             top: '40vh',
                             left: '38vw',
                             height: '30vh',
                             zIndex: 5,
+                            opacity: delayedStarted ? 1 : 0,
+                            transition: '2s',
                         }}
                         src={sum}
                     />
+
+                    {started && (
+                        <img
+                            className={classNames('peoples', {'peoples-anim': delayedStarted})}
+                            src={peoples}
+                        />
+                    )}
                 </div>
 
-                {(state.playing && !ended) && (
+                {(delayedStarted && !ended) && (
                     <div
                         style={{
                             position: 'absolute',
                             top: '0',
                             left: '0',
+                            width: '100%',
+                            height: '100%',
                             zIndex: 7,
                         }}
                     >
-                        <Lottie options={confetti1Options} />
+                        <Lottie options={confetti1Options}/>
                     </div>
                 )}
 
@@ -150,7 +179,7 @@ function App() {
                         }}
                     >
                         <div>
-                            <Lottie options={hbOptions} />
+                            <Lottie options={hbOptions}/>
                         </div>
                     </div>
                 )}
@@ -169,7 +198,7 @@ function App() {
                             zIndex: 50,
                         }}
                     >
-                            <Lottie options={confetti2Options} />
+                        <Lottie options={confetti2Options}/>
                     </div>
                 )}
 

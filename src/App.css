@@ -86,8 +86,25 @@
     left: 50%;
     width: 500px;
     height: 200px;
-    background: linear-gradient(0.25turn, rgb(27 211 255 / 46%), rgba(255, 255, 100, 0));
+    background: linear-gradient(0.25turn, rgb(27 211 255 / 60%), rgba(255, 255, 100, 0));
     z-index: 6;
+}
+
+.ray2 {
+    clip-path:polygon(0% 45%, 100% 0%, 100% 100%, 0% 55%);
+    transition: 4s;
+    transform: translateY(-50%) translateX(-50%) rotate(var(--angle)) translateY(50%) translateX(50%) translateY(-50%);
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    width: 500px;
+    height: 200px;
+    background: linear-gradient(0.25turn, rgb(209 110 213 / 58%), rgba(255, 255, 100, 0));
+    z-index: 6;
+}
+
+.ray2-anim {
+    animation: flash .5s linear infinite;
 }
 
 
@@ -108,10 +125,65 @@
     animation-iteration-count: infinite;
 }
 
+.light3 {
+    position: absolute;
+    top: -2vh;
+    left: 0;
+    animation-duration: 4s;
+    animation-name: wave;
+    animation-iteration-count: infinite;
+}
+
+.light4 {
+    position: absolute;
+    top: -2vh;
+    animation-duration: 3s;
+    animation-name: wave;
+    animation-iteration-count: infinite;
+}
+
 .sum {
     animation-duration: .5s;
     animation-name: dance;
     animation-iteration-count: infinite;
+}
+
+.peoples.peoples-anim {
+    opacity: 1;
+    bottom: -10vh;
+    animation-delay: 0s;
+    animation-duration: .3s;
+    animation-name: dance2;
+    animation-iteration-count: infinite;
+}
+
+.peoples {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    z-index: 6;
+    animation-delay: 2s;
+    animation-duration: 1s;
+    animation-name: slide;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide {
+    0% {
+        bottom: -100%
+    }
+
+    100% {
+        bottom: -10vh;
+        opacity: 1;
+    }
+}
+
+@keyframes flash {
+    50% {
+        opacity: 0.5;
+    }
 }
 
 @keyframes dance {
@@ -121,6 +193,20 @@
 
     50% {
         transform: translate3d(0, 5%, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes dance2 {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: translate3d(0, 2%, 0);
     }
 
     100% {
