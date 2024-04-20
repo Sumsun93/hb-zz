@@ -69,6 +69,7 @@ function App() {
                     background: `url(${background})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
+                    overflow: 'hidden',
                 }}
             >
                 <div className="light1">

@@ -128,6 +128,9 @@
 .light3 {
     position: absolute;
     top: -2vh;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     left: 0;
     animation-duration: 4s;
     animation-name: wave;
@@ -137,6 +140,9 @@
 .light4 {
     position: absolute;
     top: -2vh;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     animation-duration: 3s;
     animation-name: wave;
     animation-iteration-count: infinite;
