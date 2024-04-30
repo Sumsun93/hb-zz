@@ -1,16 +1,19 @@
 import {useEffect, useState} from 'react'
 import classNames from "classnames";
-import {useAudio} from "react-use";
 import Lottie from 'react-lottie';
 import './App.css'
 import background from './assets/background.png';
 import light from './assets/light.svg';
-import music from './assets/maquette_zz.mp3';
+import music from './assets/musique.wav';
 import sum from './assets/Sum.png';
+import mic from './assets/mic.svg';
 import peoples from './assets/peoples.svg';
 import confetti from './confettis.json';
 import confetti2 from './confetti2.json';
 import hb from './hb.json';
+import AudioPlayer from "./AudioPlayer.tsx";
+import sub from './assets/sub.txt';
+import {useAudio} from "react-use";
 
 function App() {
     const [started, setStarted] = useState(false);
@@ -24,7 +27,7 @@ function App() {
     });
 
     useEffect(() => {
-        if (started && !state.playing) {
+        if (started) {
             setTimeout(() => {
                 controls.play();
                 setDelayedStarted(true);
@@ -61,7 +64,11 @@ function App() {
 
     return (
         <>
-            {audio}
+            <AudioPlayer
+                audio={audio}
+                state={state}
+                subtitleSrc={sub}
+            />
             <div
                 style={{
                     width: '100vw',
@@ -84,8 +91,22 @@ function App() {
                             zIndex: 10
                         }}
                     />
-                    <div style={{left: "35.8vw", transition: "2s", opacity: delayedStarted ? 1 : 0}}
-                         className="ray"></div>
+                    <div style={{left: "35.8vw", transition: "2s", opacity: delayedStarted ? 1 : 0}} className="ray"/>
+                </div>
+
+                <div className="light1">
+                    <img
+                        src={light}
+                        style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: '29vw',
+                            width: '30px',
+                            height: '30px',
+                            zIndex: 10
+                        }}
+                    />
+                    <div style={{left: "30vw", transition: "2s", opacity: delayedStarted ? 1 : 0}} className="ray"/>
                 </div>
 
                 <div className="light2">
@@ -104,16 +125,46 @@ function App() {
                          className="ray"></div>
                 </div>
 
+                <div className="light2">
+                    <img
+                        src={light}
+                        style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: '70vw',
+                            width: '30px',
+                            height: '30px',
+                            zIndex: 10
+                        }}
+                    />
+                    <div style={{left: "71vw", transition: "2s", opacity: delayedStarted ? 1 : 0}}
+                         className="ray"></div>
+                </div>
+
                 <div className="light3">
                     <div
-                        style={{width: '100vh', height: '500px', zIndex: 11, left: "30vw", transition: "3s", opacity: delayedStarted ? 1 : 0}}
+                        style={{
+                            width: '100vh',
+                            height: '500px',
+                            zIndex: 11,
+                            left: "30vw",
+                            transition: "3s",
+                            opacity: delayedStarted ? 1 : 0
+                        }}
                         className={classNames("ray2", {"ray2-anim": delayedStarted})}
                     />
                 </div>
 
                 <div className="light4">
                     <div
-                        style={{width: '100vh', height: '500px', zIndex: 11, left: "75vw", transition: "3s", opacity: delayedStarted ? 1 : 0}}
+                        style={{
+                            width: '100vh',
+                            height: '500px',
+                            zIndex: 11,
+                            left: "75vw",
+                            transition: "3s",
+                            opacity: delayedStarted ? 1 : 0
+                        }}
                         className={classNames("ray2", {"ray2-anim": delayedStarted})}
                     />
                 </div>
@@ -132,7 +183,7 @@ function App() {
                         className={classNames({sum: delayedStarted})}
                         style={{
                             position: 'absolute',
-                            top: '40vh',
+                            top: '39vh',
                             left: '38vw',
                             height: '30vh',
                             zIndex: 5,
@@ -140,6 +191,18 @@ function App() {
                             transition: '2s',
                         }}
                         src={sum}
+                    />
+                    <img
+                        style={{
+                            position: 'absolute',
+                            top: '51vh',
+                            left: '48vw',
+                            height: '20vh',
+                            zIndex: 5,
+                            opacity: delayedStarted ? 1 : 0,
+                            transition: '2s',
+                        }}
+                        src={mic}
                     />
 
                     {started && (
