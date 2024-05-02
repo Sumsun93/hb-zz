@@ -10,10 +10,10 @@ import End from "./components/End.tsx";
 import Stage from "./components/Stage.tsx";
 
 function App() {
-    const [started, setStarted] = useState(true);
-    const [delayedStarted, setDelayedStarted] = useState(true);
-    const [ended, setEnded] = useState(true);
-    const [delayedEnded, setDelayedEnded] = useState(true);
+    const [started, setStarted] = useState(false);
+    const [delayedStarted, setDelayedStarted] = useState(false);
+    const [ended, setEnded] = useState(false);
+    const [delayedEnded, setDelayedEnded] = useState(false);
     const [audio, state, controls] = useAudio({
         src: music,
         autoPlay: false,
@@ -21,12 +21,12 @@ function App() {
     });
 
     const ref = useRef(null)
-    useFullscreen(ref, started);
+    useFullscreen(ref, (started && !delayedEnded));
 
     useEffect(() => {
         if (started) {
             setTimeout(() => {
-                // controls.play();
+                controls.play();
                 setDelayedStarted(true);
             }, 4000);
         }

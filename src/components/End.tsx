@@ -5,6 +5,10 @@ import {CiMicrophoneOn, CiMusicNote1, CiSliderVertical, CiUser} from "react-icon
 import {useDisclosure} from "@mantine/hooks";
 
 import studio from '../assets/studio.png';
+import {AiOutlineDownload} from "react-icons/ai";
+import {MdOutlineReplay} from "react-icons/md";
+
+import music from '../assets/musique.wav';
 
 const End = ({delayedEnded}: {delayedEnded: boolean}) => {
     const [opened, { open, close }] = useDisclosure(false);
@@ -47,7 +51,7 @@ const End = ({delayedEnded}: {delayedEnded: boolean}) => {
                         flexDirection: 'column',
                         justifyContent: 'center',
                         alignItems: 'center',
-                        gap: '100px',
+                        gap: '50px',
                         zIndex: 50,
                     }}
                 >
@@ -81,16 +85,16 @@ const End = ({delayedEnded}: {delayedEnded: boolean}) => {
                         >
                             <List.Item
                                 icon={
-                                    <ThemeIcon color="gray" size={48} radius="xl">
+                                    <ThemeIcon color="#D16ED593" size={48} radius="xl">
                                         <CiUser size="70%" />
                                     </ThemeIcon>
                                 }
                             >
-                                Paroles/Voix: <Title order={2}>Sumsun</Title>
+                                Paroles/Voix: <Title c="#D16ED5FF" order={2}>Sumsun</Title>
                             </List.Item>
                             <List.Item
                                 icon={
-                                    <ThemeIcon color="gray" size={48} radius="xl">
+                                    <ThemeIcon color="#D16ED593" size={48} radius="xl">
                                         <CiMusicNote1 size="70%" />
                                     </ThemeIcon>
                                 }
@@ -100,7 +104,8 @@ const End = ({delayedEnded}: {delayedEnded: boolean}) => {
                                         component="a"
                                         href="https://litkidbeats.com/"
                                         target="_blank"
-                                        variant="default"
+                                        variant="light"
+                                        color="#D16ED5FF"
                                     >
                                         LitKidBeats
                                     </Button>
@@ -108,7 +113,7 @@ const End = ({delayedEnded}: {delayedEnded: boolean}) => {
                             </List.Item>
                             <List.Item
                                 icon={
-                                    <ThemeIcon color="gray" size={48} radius="xl">
+                                    <ThemeIcon color="#D16ED593" size={48} radius="xl">
                                         <CiSliderVertical size="70%" />
                                     </ThemeIcon>
                                 }
@@ -118,7 +123,8 @@ const End = ({delayedEnded}: {delayedEnded: boolean}) => {
                                         component="a"
                                         href="https://discord.gg/gMUSCKvf5P"
                                         target="_blank"
-                                        variant="default"
+                                        variant="light"
+                                        color="#D16ED5FF"
                                     >
                                         Tomish
                                     </Button>
@@ -126,16 +132,48 @@ const End = ({delayedEnded}: {delayedEnded: boolean}) => {
                             </List.Item>
                             <List.Item
                                 icon={
-                                    <ThemeIcon color="gray" size={48} radius="xl">
+                                    <ThemeIcon color="#D16ED593" size={48} radius="xl">
                                         <CiMicrophoneOn size="70%" />
                                     </ThemeIcon>
                                 }
                             >
                                 Studio d'enregistrement: <Title order={2}>
-                                    <Button variant="default" onClick={open}>MyStudio By CocaCola</Button>
+                                    <Button
+                                        variant="light"
+                                        color="#D16ED5FF"
+                                        onClick={open}
+                                    >MyStudio By CocaCola</Button>
                                 </Title>
                             </List.Item>
                         </List>
+                    </div>
+
+                    <div
+                        style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            gap: "10px"
+                        }}
+                    >
+                        <Button
+                            variant="outline"
+                            color="#D16ED5FF"
+                            rightSection={<AiOutlineDownload size={24} />}
+                            component="a"
+                            href={music}
+                            target="_blank"
+                        >
+                            Télécharger la musique
+                        </Button>
+                        <Button
+                            onClick={() => window.location.reload()}
+                            variant="filled"
+                            color="#D16ED5FF"
+                            rightSection={<MdOutlineReplay size={24} />}
+                        >
+                            Redémarrer le show
+                        </Button>
                     </div>
                 </div>
             )}

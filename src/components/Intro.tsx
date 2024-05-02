@@ -22,13 +22,15 @@ const Intro = ({ended, started, setStarted}: {ended: boolean, started: boolean, 
             >
                 <Image
                     src={zz}
-                    h={"300px"}
+                    h={"400px"}
                     w={"auto"}
-                    opacity={"50%"}
+                    style={{
+                        filter: "drop-shadow(0 0 10px #D16ED5FF)"
+                    }}
                 />
 
                 <Button
-                    variant="default"
+                    color="#D16ED5FF"
                     style={{
                         width: '200px',
                         pointerEvents: "all"

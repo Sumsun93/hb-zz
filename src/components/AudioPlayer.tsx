@@ -5,6 +5,15 @@ import {CiPause1, CiPlay1, CiVolumeHigh, CiVolumeMute} from "react-icons/ci";
 
 import './player.css';
 
+interface Controls {
+    play: () => (Promise<void> | undefined)
+    pause: () => void
+    seek: (time: number) => void
+    volume: (volume: number) => void
+    mute: () => void
+    unmute: () => void
+}
+
 interface Subtitle {
     start: number;
     end: number;
@@ -67,7 +76,7 @@ function AudioPlayer({ delayedStarted, subtitleSrc, audio, state, controls }: {
     subtitleSrc: string,
     audio: ReactElement,
     state: HTMLMediaState,
-    controls: any,
+    controls: Controls,
 }) {
 
     useEffect(() => {
@@ -124,12 +133,12 @@ function AudioPlayer({ delayedStarted, subtitleSrc, audio, state, controls }: {
                     <div
                         style={{width: '100px'}}
                     >
-                        <Slider disabled={state.muted} label={null} min={0} max={1} step={0.01} value={state.volume} onChange={controls.volume}/>
+                        <Slider color="#D16ED5FF" variant="default" disabled={state.muted} label={null} min={0} max={1} step={0.01} value={state.volume} onChange={controls.volume}/>
                     </div>
                     <div
                         style={{width: '100%'}}
                     >
-                        <Slider disabled={!delayedStarted} label={null} min={0} max={state.duration} value={state.time}
+                        <Slider color="#D16ED5FF" disabled={!delayedStarted} label={null} min={0} max={state.duration} value={state.time}
                                 onChangeEnd={controls.seek}/>
                     </div>
                 </div>
