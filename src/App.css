@@ -7,6 +7,7 @@
     overflow: hidden;
     background: transparent;
     z-index: 30;
+    pointer-events: none;
 }
 .curtain {
     position: absolute;
@@ -165,14 +166,10 @@
 
 .peoples {
     position: absolute;
+    bottom: -10vh;
     left: 0;
-    opacity: 0;
+    opacity: 1;
     z-index: 6;
-    animation-delay: 2s;
-    animation-duration: 1s;
-    animation-name: slide;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
 }
 
 @keyframes slide {
