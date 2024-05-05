@@ -14,6 +14,7 @@ function App() {
     const [delayedStarted, setDelayedStarted] = useState(false);
     const [ended, setEnded] = useState(false);
     const [delayedEnded, setDelayedEnded] = useState(false);
+    const [isChorus, setIsChorus] = useState(false);
     const [audio, state, controls] = useAudio({
         src: music,
         autoPlay: false,
@@ -49,6 +50,7 @@ function App() {
                 subtitleSrc={sub}
                 controls={controls}
                 delayedStarted={delayedStarted}
+                setIsChorus={setIsChorus}
             />
             <div
                 style={{
@@ -60,7 +62,7 @@ function App() {
                     overflow: 'hidden',
                 }}
             >
-                <Stage started={started} delayedStarted={delayedStarted} ended={ended} state={state} />
+                <Stage started={started} delayedStarted={delayedStarted} ended={ended} state={state} isChorus={isChorus && state.playing} />
                 
                 <End delayedEnded={delayedEnded} />
 

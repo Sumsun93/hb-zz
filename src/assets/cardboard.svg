@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 133.56 126.87">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fedb97;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #fcc582;
+      }
+
+      .cls-3 {
+        fill: #e49d5d;
+      }
+
+      .cls-4 {
+        fill: #fdecda;
+        opacity: .77;
+      }
+    </style>
+  </defs>
+  <g id="OBJECTS">
+    <g>
+      <g>
+        <polygon class="cls-2" points="0 50.89 0 107.59 86.98 126.87 88.97 68.04 0 50.89"/>
+        <polygon class="cls-3" points="86.98 126.87 130.77 105.45 133.56 51.86 88.97 68.04 86.98 126.87"/>
+        <polygon class="cls-1" points="0 50.89 46.6 34.18 133.56 51.86 88.97 68.04 0 50.89"/>
+        <polygon class="cls-4" points="17.38 44.89 106.13 62.02 106.13 73.18 120.68 67.36 120.68 56.74 33.17 39.22 17.38 44.89"/>
+      </g>
+      <g>
+        <polygon class="cls-2" points="21.43 11.47 21.43 50.37 81.11 63.6 82.47 23.24 21.43 11.47"/>
+        <polygon class="cls-3" points="81.11 63.6 114.68 49.88 116.63 13.05 82.47 23.24 81.11 63.6"/>
+        <polygon class="cls-1" points="21.43 11.47 53.4 0 116.63 13.05 82.47 23.24 21.43 11.47"/>
+        <polygon class="cls-4" points="33.35 7.35 95.5 19.35 95.26 27.21 106.04 23.74 106.47 16.08 44.18 3.46 33.35 7.35"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -4,7 +4,7 @@ import {Button, List, Modal, Image, ThemeIcon, Title} from "@mantine/core";
 import {CiMicrophoneOn, CiMusicNote1, CiSliderVertical, CiUser} from "react-icons/ci";
 import {useDisclosure} from "@mantine/hooks";
 
-import studio from '../assets/studio.png';
+import studio from '../assets/studio.webp';
 import {AiOutlineDownload} from "react-icons/ai";
 import {MdOutlineReplay} from "react-icons/md";
 
@@ -29,11 +29,10 @@ const End = ({delayedEnded}: {delayedEnded: boolean}) => {
                     alignItems: 'center',
                     height: '50vh',
                 }}>
-                    <Title order={2}>Tu y as vraiment cru ?</Title>
                     <Image
                         radius="md"
                         src={studio}
-                        h='90%'
+                        h='100%'
                         w='auto'
                     />
                 </div>

@@ -1,9 +1,11 @@
 import {useState, useEffect, ReactElement} from 'react';
 import {HTMLMediaState} from "react-use/lib/factory/createHTMLMediaHook";
-import {ActionIcon, Slider} from "@mantine/core";
+import {ActionIcon, Slider, Text} from "@mantine/core";
 import {CiPause1, CiPlay1, CiVolumeHigh, CiVolumeMute} from "react-icons/ci";
 
 import './player.css';
+import TimeFormatter from "./TimeFormatter.tsx";
+import {timeToSeconds} from "../utils.tsx";
 
 interface Controls {
     play: () => (Promise<void> | undefined)
@@ -20,9 +22,16 @@ interface Subtitle {
     text: string;
 }
 
-const SubtitleDisplay = ({ src, currentTime }: {
+const chorusTime = [
+    {start: '00:00:13.000', end: '00:00:40.112'},
+    {start: '00:01:06.157', end: '00:01:33.729'},
+    {start: '00:01:59.443', end: '00:02:47.729'}
+]
+
+const SubtitleDisplay = ({ src, currentTime, setIsChorus }: {
     src: string,
-    currentTime: number
+    currentTime: number,
+    setIsChorus: (state: boolean) => void
 }) => {
     const [subtitles, setSubtitles] = useState<Subtitle[]>([]);
     const [currentSubtitle, setCurrentSubtitle] = useState("");
@@ -39,6 +48,7 @@ const SubtitleDisplay = ({ src, currentTime }: {
     useEffect(() => {
         const subtitle = subtitles.find(s => currentTime >= s.start && currentTime <= s.end);
         setCurrentSubtitle(subtitle ? subtitle.text : "");
+        setIsChorus(chorusTime.some(s => currentTime >= timeToSeconds(s.start) && currentTime <= timeToSeconds(s.end)))
     }, [currentTime, subtitles]);
 
     return <div className="subtitle">{currentSubtitle}</div>;
@@ -65,18 +75,13 @@ const parseVTT = (vttString: string) => {
     return entries;
 };
 
-const timeToSeconds = (time: string) => {
-    const [hms, ms] = time.split('.');
-    const [hours, minutes, seconds] = hms.split(':').map(parseFloat);
-    return hours * 3600 + minutes * 60 + seconds + parseFloat('0.' + ms);
-};
-
-function AudioPlayer({ delayedStarted, subtitleSrc, audio, state, controls }: {
+function AudioPlayer({ delayedStarted, subtitleSrc, audio, state, controls, setIsChorus }: {
     delayedStarted: boolean,
     subtitleSrc: string,
     audio: ReactElement,
     state: HTMLMediaState,
     controls: Controls,
+    setIsChorus: (state: boolean) => void
 }) {
 
     useEffect(() => {
@@ -98,7 +103,7 @@ function AudioPlayer({ delayedStarted, subtitleSrc, audio, state, controls }: {
                     fontSize: "3em",
                 }}
             >
-                <SubtitleDisplay src={subtitleSrc} currentTime={state.time} />
+                <SubtitleDisplay src={subtitleSrc} currentTime={state.time} setIsChorus={setIsChorus} />
             </div>
             <div
                 style={{
@@ -114,32 +119,42 @@ function AudioPlayer({ delayedStarted, subtitleSrc, audio, state, controls }: {
                     zIndex: 29,
                 }}
             >
-                <div className="player">
-                    <ActionIcon
-                        variant="default"
-                        aria-label="Play/Pause"
-                        disabled={!delayedStarted}
-                        onClick={state.playing ? controls.pause : controls.play}
-                    >
-                        {state.playing ? <CiPause1/> : <CiPlay1/>}
-                    </ActionIcon>
-                    <ActionIcon
-                        variant="default"
-                        aria-label="Volume"
-                        onClick={state.muted ? controls.unmute : controls.mute}
-                    >
-                        {state.muted ? <CiVolumeMute /> : <CiVolumeHigh />}
-                    </ActionIcon>
-                    <div
-                        style={{width: '100px'}}
-                    >
-                        <Slider color="#D16ED5FF" variant="default" disabled={state.muted} label={null} min={0} max={1} step={0.01} value={state.volume} onChange={controls.volume}/>
+                <div className="player" style={{fontFamily: 'inherit', display: 'flex', justifyContent: 'space-between'}}>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '10px'}}>
+                        <ActionIcon
+                            color="#D16ED5FF"
+                            aria-label="Play/Pause"
+                            disabled={!delayedStarted}
+                            onClick={state.playing ? controls.pause : controls.play}
+                        >
+                            {state.playing ? <CiPause1/> : <CiPlay1/>}
+                        </ActionIcon>
+                        <ActionIcon
+                            color="#D16ED5FF"
+                            aria-label="Volume"
+                            onClick={state.muted ? controls.unmute : controls.mute}
+                        >
+                            {state.muted ? <CiVolumeMute /> : <CiVolumeHigh />}
+                        </ActionIcon>
+                        <div
+                            style={{width: '100px'}}
+                        >
+                            <Slider color="#D16ED5FF" variant="default" disabled={state.muted} label={null} min={0} max={1} step={0.01} value={state.volume} onChange={controls.volume}/>
+                        </div>
                     </div>
+                    <Text
+                        style={{
+                            fontFamily: 'sans-serif',
+                            display: 'flex',
+                            gap: '5px',
+                        }}
+                    >
+                        <TimeFormatter seconds={state.time} /> / <TimeFormatter seconds={state.duration} />
+                    </Text>
                     <div
                         style={{width: '100%'}}
                     >
-                        <Slider color="#D16ED5FF" disabled={!delayedStarted} label={null} min={0} max={state.duration} value={state.time}
-                                onChangeEnd={controls.seek}/>
+                        <Slider color="#D16ED5FF" disabled={!delayedStarted} label={null} min={0} max={state.duration} value={state.time} onChangeEnd={controls.seek}/>
                     </div>
                 </div>
             </div>
