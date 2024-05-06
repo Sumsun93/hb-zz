@@ -41,7 +41,8 @@ const Intro = ({ended, started, setStarted}: {ended: boolean, started: boolean, 
                             w={"auto"}
                             style={{
                                 filter: "drop-shadow(0 0 10px #D16ED5FF)",
-                                pointerEvents: 'all'
+                                pointerEvents: 'all',
+                                cursor: 'pointer'
                             }}
                             onClick={controls.play}
                         />
