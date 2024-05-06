@@ -39,6 +39,7 @@ function App() {
     useEffect(() => {
         if (delayedStarted && !state.playing && (state.time === state.duration)) {
             setEnded(true);
+            toggle(false);
             setTimeout(() => {
                 setDelayedEnded(true);
             }, 4000);
@@ -55,7 +56,7 @@ function App() {
                 delayedStarted={delayedStarted}
                 setIsChorus={setIsChorus}
             />
-            {(!isFullscreen && started) && (
+            {(!isFullscreen && started && !ended) && (
                 <div
                     style={{
                         position: 'absolute',
