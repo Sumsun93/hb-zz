@@ -1,10 +1,10 @@
-import {Button, Image} from "@mantine/core";
+import {useEffect} from "react";
+import {Button, Image, Text} from "@mantine/core";
 import classNames from "classnames";
 import {useAudio} from "react-use";
 
 import zz from '../assets/zz.svg';
 import miam from '../assets/miam.mp3';
-import {useEffect} from "react";
 
 const Intro = ({ended, started, setStarted}: {ended: boolean, started: boolean, setStarted: (state: boolean) => void}) => {
     const [audio, , controls] = useAudio({
@@ -56,6 +56,12 @@ const Intro = ({ended, started, setStarted}: {ended: boolean, started: boolean, 
                     >
                         Démarrer le show !
                     </Button>
+
+                    <Text style={{textAlign: 'center'}}>
+                        Assures-toi d'avoir l'accélération matérielle/graphique d'activée sur ton navigateur.
+                        <br />
+                        Une fois le show démarré, tu peux régler le volume en bas de l'écran !
+                    </Text>
                 </div>
             )}
             <div id="curtain-left" className={classNames("curtain", {open: (started && !ended)})}></div>

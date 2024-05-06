@@ -6,7 +6,7 @@ import peoples from "../assets/peoples.svg";
 import chair from '../assets/chair.svg';
 import cardboard from '../assets/cardboard.svg';
 import Lottie from "react-lottie";
-import confetti from "../confettis.json";
+import hearts from "../hearts.json";
 import {HTMLMediaState} from "react-use/lib/factory/createHTMLMediaHook";
 import {DetailedHTMLProps, ImgHTMLAttributes} from "react";
 import {timeToSeconds} from "../utils.tsx";
@@ -15,7 +15,7 @@ const Stage = ({delayedStarted, started, ended, state, isChorus}: {delayedStarte
     const confetti1Options = {
         loop: true,
         autoplay: true,
-        animationData: confetti,
+        animationData: hearts,
     };
 
     const chairVisible = state.time >= 51;
@@ -241,7 +241,8 @@ const Stage = ({delayedStarted, started, ended, state, isChorus}: {delayedStarte
                         left: '0',
                         width: '100%',
                         height: '100%',
-                        zIndex: 7,
+                        zIndex: 10,
+                        opacity: 0.5
                     }}
                 >
                     <Lottie options={confetti1Options}/>
